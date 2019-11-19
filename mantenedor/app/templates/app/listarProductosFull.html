@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/listar_productos_full.css' %}">
+    <link rel="stylesheet" href="{% static 'img/fondo.png' %}">
+    
+    <title>Document</title>
+</head>
+<body background="{% static 'img/fondo.png' %}">
+    <h1>Listar Productos FULL EDICIÓN </h1>
+    <ul>
+        {% for c in productos %}
+        <li>
+            <div class="orden" id="orden1">{{c.nombre}}  {{c.descripcion}}$ {{c.precio}} </div>
+            
+             
+            <a href="/editar_producto/{{c.id}}"> EDITAR</a>
+            <a href="/borrar_producto/{{c.id}}"
+            onclick="return confirm('¿Seguro de borrar?');"
+            > BORRAR</a>
+        </li>
+        {% endfor%}
+    </ul>
+</body>
+
+</html>
+
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+
+
+{% endblock content %}
