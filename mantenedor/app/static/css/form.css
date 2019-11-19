@@ -1,22 +1,41 @@
 .f{
     text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 5%;
+    width: 100%;
+    margin-top: 3%;
+   
     float: left;
-
-
 }
 
 
 .g{
     margin-left: 15%;
     margin-right: 15%;
-    margin-inline-end: 65%;
-    
-   
-    
+    margin-inline-end:70%;
+}
 
+.czise{
+    color:rgba(11, 15, 228, 0.856) ;
+    background-color: whitesmoke;
+}
 
+.btit{
+    color: black;
+    font-style: oblique;
+    background-color: whitesmoke;
+    float: left;
+    width: 15%;
+    margin: 2%;
+    border-radius: 23px 23px 23px 23px;
+    -moz-border-radius: 23px 23px 23px 23px;
+    -webkit-border-radius: 23px 23px 23px 23px;
+    border: 5px groove #000000;
+ 
+}
 
+#tcen{
+    text-align: center;
+}
+
+.rb{
+    color: red;
 }
