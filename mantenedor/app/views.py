@@ -49,6 +49,12 @@ def ingresarProducto(request):
         form = ProductoForm()
         return render(request, 'app/ingresarProducto.html', {'form': form})
 
+def listarProductos(request):
+    # creamos una variable que será colección y carga TODOS los registros
+    producto = Producto.objects.all()
+    # renderizamos la colección en el template: listar_carreras.html
+    return render(request, "app/listarProductos.html",
+                  {'producto': producto})
 
 def listarProductosFull(request):
     producto = Producto.objects.all()
@@ -62,15 +68,16 @@ def editarProducto(request, producto_id):
     form = ProductoForm(instance=instancia)
 
     #Comprobamos que sea enviado el formulario
+    
     if request.method =="POST":
         form= ProductoForm(request.POST, instance= instancia)
         if form.is_valid():
             instancia = form.save(commit=False)
             instancia.save()
-
     return render(request, "app/editarProducto.html",{'form':form})
-
+         
+    
 def borrarProducto(request, producto_id):
     instancia = Producto.objects.get(id=producto_id)
     instancia.delete()
-    return redirect("/")   #--> al raiz de las páginas
+    return redirect("/listarProductosFull")   #--> al raiz de las páginas

@@ -1,7 +1,6 @@
 {% extends 'app/baseProducto.html' %}
 
 {% block content %}
-
 {% load staticfiles %}
 <link href="{% static 'css/form.css' %}" rel="stylesheet">
 <!-- <link  href="{% static 'css/estilos.css' %}" rel="stylesheet"> -->
@@ -13,14 +12,10 @@
 <link  href="{% static 'css/lightbox.min.css' %}" rel="stylesheet"> -->
 <!-- <link  href="{% static 'css/menuFijo.css' %}" rel="stylesheet"> -->
 <!-- <link  href="{% static 'css/rrss.min.css' %}" rel="stylesheet"> -->
-<title>Editar Productos</title>
-</head>
-<h1 class="f">Listar Productos FULL EDICIÓN </h1>
+<h1 class="f">Listar Productos</h1>
 <body>
-    
-    
-        
-            {% for c in producto %}
+   
+    {% for c in producto %}
             
                 <form  role="form" enctype="multipart/form-data" action="" method="POST" id="upload-image-form">
                     <div class="btit" id="tcen" >
@@ -28,20 +23,12 @@
                         <div > DESCRIPCION </div><div  class="czise">{{c.descripcion}}</div>          
                         <div > CLASIFICACIÓN </div><div  class="czise">{{c.clasificacion}}</div>
                         <div > PRECIO </div><div  class="czise">$ {{c.precio}}</div>
-                        <div >
-                            <a href="/editarProducto/{{c.id}}"> EDITAR</a>
-                            <a class="rb"href="/borrarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');"> BORRAR</a>
-                        </div>
+                        
                     </div>
                     
                 </form>
             
             {% endfor%}
         
-    
 </body>
-
-
-
-
 {% endblock content %}

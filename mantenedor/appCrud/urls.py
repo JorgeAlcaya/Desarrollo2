@@ -21,5 +21,9 @@ urlpatterns = [
         path('', include('app.urls')),
         path('ingresarProducto', include('app.urls')),
         path('listarProductosFull', include('app.urls')),
+        path('editarProducto/<int:producto_id>', include('app.urls')),
+        path('borrarProducto/<int:producto_id>', include('app.urls')),
+        path('listarProductos', include('app.urls')),
+
 ]
 
